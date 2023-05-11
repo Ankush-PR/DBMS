@@ -14,4 +14,5 @@ To download OSM data in the desired format, follow these steps:
 6) Click the "Export" button in the top right corner.
 7) Choose the desired format (GeoJSON or KML) and click "download."
 
-Downloaded all data for cafes in New York City Area in GeoJSON format. Used the following query:
+Downloaded all data for cafes in New York City Area in GeoJSON format. Used the following query: <br><br>
+<img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/16c0196f-4a3c-44fe-ae73-56312fbe0fbe">
