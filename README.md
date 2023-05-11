@@ -16,3 +16,9 @@ To download OSM data in the desired format, follow these steps:
 
 Downloaded all data for cafes in New York City Area in GeoJSON format. Used the following query: <br><br>
 <img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/16c0196f-4a3c-44fe-ae73-56312fbe0fbe">
+Step 2: Get the Data from an online source.
+
+Then we imported the data using the following command:
+
+ogr2ogr -f "PostgreSQL" PG:"dbname=gis_analysis user=postgres host=/var/run/postgresql port=5432" "/home/ubuntu/export.geojson" -nln public.geo_features -lco GEOMETRY_NAME=geom -lco FID=gid -lco PRECISION=NO -nlt PROMOTE_TO_MULTI -a_srs EPSG:4326
+
