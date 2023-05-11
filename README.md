@@ -22,9 +22,9 @@ Then we imported the data using the following command:
 
 ogr2ogr -f "PostgreSQL" PG:"dbname=gis_analysis user=postgres host=/var/run/postgresql port=5432" "/home/ubuntu/export.geojson" -nln public.geo_features -lco GEOMETRY_NAME=geom -lco FID=gid -lco PRECISION=NO -nlt PROMOTE_TO_MULTI -a_srs EPSG:4326
 
-Goals
+<h3>Goals</h3>
 
-Goal 1: Retrieve Locations of specific features
+<h4>Goal 1: Retrieve Locations of specific features</h4>
 
 We retreived cafe which are marked as coffee_shop as cuisine. We used the following query for the same:
 
