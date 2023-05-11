@@ -15,10 +15,22 @@ To download OSM data in the desired format, follow these steps:
 7) Choose the desired format (GeoJSON or KML) and click "download."
 
 Downloaded all data for cafes in New York City Area in GeoJSON format. Used the following query: <br><br>
-<img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/16c0196f-4a3c-44fe-ae73-56312fbe0fbe">
+<img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/16c0196f-4a3c-44fe-ae73-56312fbe0fbe"><br><br>
 Step 2: Get the Data from an online source.
 
 Then we imported the data using the following command:
 
 ogr2ogr -f "PostgreSQL" PG:"dbname=gis_analysis user=postgres host=/var/run/postgresql port=5432" "/home/ubuntu/export.geojson" -nln public.geo_features -lco GEOMETRY_NAME=geom -lco FID=gid -lco PRECISION=NO -nlt PROMOTE_TO_MULTI -a_srs EPSG:4326
 
+Goals
+
+Goal 1: Retrieve Locations of specific features
+
+We retreived cafe which are marked as coffee_shop as cuisine. We used the following query for the same:
+
+SELECT gid, name, ST_AsText(geom) AS location
+FROM public.geo_features
+WHERE cuisine = 'coffee_shop' LIMIT 10;
+
+Below is the output:
+<img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/c2581bef-56ca-497c-bb05-49655c2d2034">
