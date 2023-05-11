@@ -32,5 +32,8 @@ SELECT gid, name, ST_AsText(geom) AS location
 FROM public.geo_features
 WHERE cuisine = 'coffee_shop' LIMIT 10;
 
-Below is the output:
-<img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/c2581bef-56ca-497c-bb05-49655c2d2034">
+Below is the output:<br><br>
+
+![Screenshot 2023-05-10 at 9 34 32 PM](https://github.com/Astroboyag/DBMS/assets/46861452/87956469-e275-4e70-b7c4-e8146e8a6800)
+
+
