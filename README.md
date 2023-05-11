@@ -33,7 +33,27 @@ FROM public.geo_features
 WHERE cuisine = 'coffee_shop' LIMIT 10;
 
 Below is the output:<br><br>
+<img width="620" alt="Screenshot 2023-05-10 at 9 44 43 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/d41ac01d-4ed5-4450-a071-79d231b7ebaa">
 
-![Screenshot 2023-05-10 at 9 34 32 PM](https://github.com/Astroboyag/DBMS/assets/46861452/87956469-e275-4e70-b7c4-e8146e8a6800)
+
+<img width="618" alt="Screenshot 2023-05-10 at 9 50 41 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/dc72803c-da67-4acf-af0a-18eca2f5dc8e"><br><br>
+By creating an index on the cuisine column, the database will be able to quickly filter the rows that match the condition, improving the query's performance. Keep in mind that creating indexes may increase storage space and impact data modification performance, so you should find the right balance between query performance and storage/modification costs.<br>
+Optimization of Goal 2:<br>
+We can create a spatial index on the geom column to speed up spatial operations:<br>
+CREATE INDEX idx_geo_features_geom ON public.geo_features USING gist(geom);<br>
+The query remains the same:<br>
+<p>SELECT gid, name, ST_AsText(geom) AS location,
+       ST_Distance(ST_Transform(geom, 3857), ST_Transform(ST_SetSRID(ST_Point(-74.0014, 40.7289), 4326), 3857)) AS distance_meters
+FROM public.geo_features
+WHERE amenity = 'cafe'
+ORDER BY distance_meters ASC
+LIMIT 5;</p>
+
+
+
+
+
+
+
 
 
