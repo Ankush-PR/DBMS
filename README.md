@@ -42,12 +42,12 @@ Optimization of Goal 2:<br>
 We can create a spatial index on the geom column to speed up spatial operations:<br>
 CREATE INDEX idx_geo_features_geom ON public.geo_features USING gist(geom);<br>
 The query remains the same:<br>
-<p>SELECT gid, name, ST_AsText(geom) AS location,
+SELECT gid, name, ST_AsText(geom) AS location,
        ST_Distance(ST_Transform(geom, 3857), ST_Transform(ST_SetSRID(ST_Point(-74.0014, 40.7289), 4326), 3857)) AS distance_meters
 FROM public.geo_features
 WHERE amenity = 'cafe'
 ORDER BY distance_meters ASC
-LIMIT 5;</p>
+LIMIT 5;
 
 
 
