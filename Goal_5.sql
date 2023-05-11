@@ -1,11 +1,4 @@
 SELECT gid, name, ST_AsText(geom) AS location
-WITH buffer_areas AS (
-  SELECT ST_Union(ST_Buffer(ST_Transform(geom, 3857), 500)) AS geom
-  FROM public.geo_features
-  WHERE amenity = 'cafe' AND building = 'yes'
-)
-SELECT ST_Area(ST_Transform(geom, 3857)) AS area_sq_meters
-FROM buffer_areas;
 FROM public.geo_features
 WHERE cuisine = 'coffee_shop' LIMIT 10;
 
@@ -19,15 +12,8 @@ LIMIT 5;
 WITH buffer_areas AS (
   SELECT gid, ST_Union(ST_Buffer(ST_Transform(geom, 3857), 500)) AS geom
   FROM public.geo_features
-WITH buffer_areas AS (
-  SELECT ST_Union(ST_Buffer(ST_Transform(geom, 3857), 500)) AS geom
-  FROM public.geo_features
   WHERE amenity = 'cafe' AND building = 'yes'
-)
-SELECT ST_Area(ST_Transform(geom, 3857)) AS area_sq_meters
-FROM buffer_areas;
-  WHERE amenity = 'cafe' AND building = 'yes'
-  GROUP BY gid
+  GROUP BY grid
 ),
 buffer_areas_with_area AS (
   SELECT gid, geom, ST_Area(ST_Transform(geom, 3857)) AS area_sq_meters
