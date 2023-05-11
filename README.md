@@ -1,5 +1,4 @@
 # DBMS
 Step 0: Install Postgis and Enable it on Postgres
 Created a new PostgreSQL database and enable the PostGIS extension:<br><br>
-![alt text](https://github.com/Astroboyag/DBMS/commit/dd34acd5b532327391a160b332e14b4254cc1eac)
-
+<img src=(https://github.com/Astroboyag/DBMS/blob/main/Screenshot%202023-05-10%20at%205.33.57%20PM.png) height="300" width="225">
