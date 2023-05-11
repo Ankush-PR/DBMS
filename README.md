@@ -79,7 +79,7 @@ Here is the analysis for Goal 2:<br>
 Here is the analysis for Goal 3:<br>
 <img width="624" alt="Screenshot 2023-05-10 at 10 14 01 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/236ee57b-ab10-41c5-927c-d89701ed4f20"><br>
 
-<h2>Goal 5: Sorting and Limit Executions<h2>
+<h2>Goal 5: Sorting and Limit Executions</h2>
 Sorting and limiting query results can help us retrieve only the most relevant data or present the results in a more user-friendly manner. You can use the ORDER BY clause to sort the results and the LIMIT clause to limit the number of rows returned.<br>
 Sorting and Limit on Goal 1:<br>
 SELECT gid, name, ST_AsText(geom) AS location<br>
