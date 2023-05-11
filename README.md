@@ -31,13 +31,12 @@ We retreived cafe which are marked as coffee_shop as cuisine. We used the follow
 SELECT gid, name, ST_AsText(geom) AS location<br>
 FROM public.geo_features<br>
 WHERE cuisine = 'coffee_shop' LIMIT 10;<br>
-
 Below is the output:<br>
 <img width="620" alt="Screenshot 2023-05-10 at 9 44 43 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/d41ac01d-4ed5-4450-a071-79d231b7ebaa"><br><br>
 <h2>Goal 2: Retrieve Locations of specific features</h2>
-To calculate the distance between two points, we used the ST_Distance function in PostGIS. First, we need to pick two points based on gid value and then use the geom column for the distance calculation.<br>
+To calculate the distance between two points, we used the ST_Distance function in PostGIS. First, we need to pick two points based on gid value and then use the geom column for the distance calculation.<br><br>
 
-Below is the query that we used for gid 1 and gid 2<br>
+Below is the query that we used for gid 1 and gid 2</br>
 SELECT<br>
     ST_Distance(<br>
         ST_Transform(a.geom, 3857),<br>
