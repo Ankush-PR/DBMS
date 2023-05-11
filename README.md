@@ -16,7 +16,7 @@ To download OSM data in the desired format, follow these steps:
 
 Downloaded all data for cafes in New York City Area in GeoJSON format. Used the following query: <br><br>
 <img width="623" alt="Screenshot 2023-05-10 at 9 40 02 PM" src="https://github.com/Astroboyag/DBMS/assets/46861452/16c0196f-4a3c-44fe-ae73-56312fbe0fbe"><br><br>
-Step 2: Get the Data from an online source.
+<h2>Step 2: Get the Data from an online source.</h2>
 
 Then we imported the data using the following command:
 
